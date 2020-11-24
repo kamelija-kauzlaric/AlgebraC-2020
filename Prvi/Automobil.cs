@@ -6,13 +6,13 @@ namespace Prvi
 {
     class Automobil
     {
-        public string boja = "Crvena";
+        public string boja="Crvena";
         string MarkaAutomobila;
         double KS;
         public override string ToString()
         {
             // return base.ToString();
-            return "Ja sam Automobil Audi A1, moja boja je " + this.boja;
+            return "Ja sam Automobil Audi A1, moja boja je "+this.boja;
         }
     }
 }

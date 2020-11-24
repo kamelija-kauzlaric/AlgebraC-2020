@@ -12,6 +12,18 @@ namespace Prvi
             Console.WriteLine(a1);
             a1.boja = "Maroon";
             Console.WriteLine(a1);
+
+
+        }
+    }
+}
+namespace SecondNamespace
+{
+    class Program
+    {
+        public void Tester(string[] args)
+        {
+            Console.WriteLine("Hello World!");
         }
     }
 }
