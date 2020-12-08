@@ -10,7 +10,7 @@ namespace _05_switch
             decimal prvi = decimal.Parse(Console.ReadLine());
 
             Console.WriteLine("Drugi broj: ");
-            decimal drugi=0;
+            decimal drugi = 0;
 
 
             try
@@ -20,7 +20,7 @@ namespace _05_switch
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-               // throw ex;
+                // throw ex;
             }
 
             Console.WriteLine("Unesite operaciju: ");
