@@ -6,7 +6,7 @@ namespace Prijestupna_godina
     {
         static void Main(string[] args)
         {
-            // Zadatak 5.2.8.
+            // Zadatak 5.3.6.
 
             Console.WriteLine("PRIJESTUPNE GODINE");
             Console.WriteLine("");
@@ -27,7 +27,7 @@ namespace Prijestupna_godina
             Console.WriteLine("");
             Console.WriteLine("");
 
-            // Zadatak 5.3.6.
+            // Zadatak 5.2.8.
 
             Console.WriteLine("Pritisni ENTER za provjeru godine koje želiš ili unesi 'kraj' za izlaz.");
 
