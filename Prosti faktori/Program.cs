@@ -10,33 +10,35 @@ namespace Prosti_faktori
         {
             // 6.2.5. Prosti faktori
 
-            Console.WriteLine("Ovaj program zasad još ne ispisuje rastav prirodnih brojeva na proste faktore. Ali svejedno unesite željeni broj, zašto ne:");
+            Console.WriteLine("PRIME FACTORIZATION - enter a number to get its prime factors:");
 
-            List<int> listaProstihFaktora = new List<int>();
-            int djeljenik = int.Parse(Console.ReadLine());
+            int dividend = int.Parse(Console.ReadLine());
+            int factor = 2;
+            List<int> primeFactorList = new List<int>();
 
-            //while (djeljenik != 1)
-            //{
-            for (int i = 2; i < djeljenik; i++)
+            while (factor <= dividend)
             {
-                if (djeljenik % i == 0)
+                if (dividend % factor == 0)
                 {
-                    listaProstihFaktora.Add(i);
+                    primeFactorList.Add(factor);
+                    dividend /= factor;
                 }
-                djeljenik = djeljenik /= i;
+                else
+                {
+                    factor++;
+                }
             }
-            //}
 
             Console.WriteLine("");
-            if (!listaProstihFaktora.Any())
+            if (!primeFactorList.Any())
             {
-                Console.WriteLine("Unijeli ste prosti broj! Ne može tako.");
+                Console.WriteLine("No primes accepted. Bye!");
             }
             else
             {
-                Console.WriteLine("Faktori su:");
-                listaProstihFaktora.Sort();
-                foreach (int a in listaProstihFaktora)
+                Console.WriteLine("The prime factors are: ");
+                primeFactorList.Sort();
+                foreach (int a in primeFactorList)
                 {
                     Console.Write(a + " ");
                 }
