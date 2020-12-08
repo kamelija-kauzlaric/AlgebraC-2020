@@ -26,11 +26,13 @@ namespace Prijestupna_godina
 
             Console.WriteLine("");
             Console.WriteLine("");
+            Console.WriteLine("");
 
-            // Zadatak 5.2.8.
+            Console.WriteLine("PROVJERI JE LI TVOJA GODINA PRIJESTUPNA");
+            Console.WriteLine("");
 
-            Console.WriteLine("Pritisni ENTER za provjeru godine koje želiš ili unesi 'kraj' za izlaz.");
-
+            Console.WriteLine("Unesi svoju godinu ili 'kraj' za izlaz.");
+            Console.WriteLine("");
             while (true)
             {
                 string input = Console.ReadLine();
@@ -38,24 +40,25 @@ namespace Prijestupna_godina
                 {
                     break;
                 }
-                Console.WriteLine("Unesi novu godinu.");
-                int korisnikova_godina = int.Parse(Console.ReadLine());
+                int korisnikova_godina = Convert.ToInt32(input);
                 if (korisnikova_godina % 4 == 0 && korisnikova_godina % 100 != 0)
                 {
-                    Console.WriteLine("Godina je prijestupna! Ponovi ENTER ili upiši 'kraj'.");
+                    Console.WriteLine("Godina je prijestupna! Unesi novu godinu ili 'kraj' za izlaz.");
                     Console.WriteLine("");
                 }
                 else if (korisnikova_godina % 400 == 0)
                 {
-                    Console.WriteLine("Godina je prijestupna! Ponovi ENTER ili upiši 'kraj'.");
+                    Console.WriteLine("Godina je prijestupna! Unesi novu godinu ili 'kraj' za izlaz.");
                     Console.WriteLine("");
                 }
                 else
                 {
-                    Console.WriteLine("Godina NIJE prijestupna! Ponovi ENTER ili upiši 'kraj'.");
+                    Console.WriteLine("Godina NIJE prijestupna! Unesi novu godinu ili 'kraj' za izlaz.");
                     Console.WriteLine("");
                 }
+
             }
+
         }
     }
 }
