@@ -7,19 +7,19 @@ namespace _06_02_01_arraylist
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Unesi eleemnte niza");
+            Console.WriteLine("Unesi elemente niza");
 
             ArrayList arr = new ArrayList();  // ne motramo definirati duljinu liste
 
             for (int i = 0; i < 5; i++)
             {
-                //  arr.Add(int.Parse(Console.ReadLine())); // Jeli potrebno prewbaciti ovo u broj?
-                arr.Add(Console.ReadLine()); // Jeli potrebno prewbaciti ovo u broj?
+                //  arr.Add(int.Parse(Console.ReadLine())); // Je li potrebno prebaciti ovo u broj?
+                arr.Add(Console.ReadLine()); // Je li potrebno prebaciti ovo u broj?
             }
 
             foreach (var item in arr)
             {
-               // Console.Write(" "+ (int.Parse((string)item) * 2));   // moze i ovako
+                // Console.Write(" "+ (int.Parse((string)item) * 2));   // moze i ovako
                 Console.Write(" " + (int.Parse(item.ToString()) * 2));
             }
             for (int i = 0; i < arr.Count; i++)
