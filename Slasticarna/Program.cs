@@ -9,9 +9,8 @@ namespace Slasticarna
             Console.WriteLine("DOBRODOŠLI U SLASTIČARNU!");
             Console.WriteLine("");
             Console.WriteLine("Kolač dana je 'Čokoladna ekstaza'.");
-            Console.WriteLine("");
 
-            // Primjer kolača
+            // Primjer kolača - K1
             Kolac K1 = new Kolac("Cokoladna ekstaza");
             K1.DodajSastojak("Margarin", 200);
             K1.DodajSastojak("Secer", 100);
@@ -20,8 +19,12 @@ namespace Slasticarna
             Rerna.Ispeci(ref K1);
             Console.WriteLine("");
 
-            // Korisnikov kolač
-            Console.WriteLine("Ispecite i kolač po svom izboru!");
+            Console.WriteLine(K1);
+            Console.WriteLine("");
+
+            Console.WriteLine("Dosad ste ispekli " + Rerna.BrojIspecenihKolaca.ToString() + " kolač! Ispecite i kolač po vlastitom izboru!");
+
+            // Korisnikov kolač - K2
             Console.WriteLine("");
             Kolac K2 = new Kolac();
             Console.Write("Ime vašeg kolača: ");
@@ -44,24 +47,14 @@ namespace Slasticarna
             Rerna.Ispeci(ref K2);
             Console.WriteLine("");
 
-            // Završetak
-            Console.WriteLine("");
-            Console.Write("Kolači su pečeni! Želite li 'Čokoladnoj ekstazi' dodati limun? D = da, N = ne: ");
-            string odabir = Console.ReadLine();
+            Console.WriteLine(K2);
             Console.WriteLine("");
 
-            if (odabir.ToUpper() == "D")
-            {
-                if (Rerna.peceno == true)
-                {
-                    Console.WriteLine("Ne možete dodati sastojak već pečenom kolaču!");
-                }
-                else
-                {
-                    K1.DodajSastojak("Limun", 100);
-                }
-            }
-            Console.WriteLine("Mmmmm! Ispekli ste " + Kolac.BrojInstanci.ToString() + " kolača! Uživajte!");
+            K1.DodajSastojak("Limun", 100);
+
+            // Završetak
+            Console.WriteLine("U vašoj kuharici ukupno je " + Kolac.BrojRecepata.ToString() + " recepata!");
+            Console.WriteLine("Dosad ste ispekli " + Rerna.BrojIspecenihKolaca.ToString() + " kolača! Uživajte!");
         }
     }
 }
