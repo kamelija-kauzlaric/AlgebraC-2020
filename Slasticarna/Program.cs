@@ -1,0 +1,67 @@
+﻿using System;
+
+namespace Slasticarna
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("DOBRODOŠLI U SLASTIČARNU!");
+            Console.WriteLine("");
+            Console.WriteLine("Kolač dana je 'Čokoladna ekstaza'.");
+            Console.WriteLine("");
+
+            // Primjer kolača
+            Kolac K1 = new Kolac("Cokoladna ekstaza");
+            K1.DodajSastojak("Margarin", 200);
+            K1.DodajSastojak("Secer", 100);
+            K1.DodajSastojak("Cokolada", 300);
+            K1.DodajSastojak("Jaje", 50);
+            Rerna.Ispeci(ref K1);
+            Console.WriteLine("");
+
+            // Korisnikov kolač
+            Console.WriteLine("Ispecite i kolač po svom izboru!");
+            Console.WriteLine("");
+            Kolac K2 = new Kolac();
+            Console.Write("Ime vašeg kolača: ");
+            K2.ImeKolaca = Console.ReadLine();
+            Console.Write("Pritisnite ENTER pa unesite željene sastojke ili upišite 'peci' za nastavak.");
+            Console.WriteLine("");
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input.ToLower() == "peci")
+                {
+                    break;
+                }
+                Console.Write("Ime sastojka: ");
+                string imeSastojka = Console.ReadLine();
+                Console.Write("Gramaža: ");
+                int gramaza = int.Parse(Console.ReadLine());
+                K2.DodajSastojak(imeSastojka, gramaza);
+            }
+            Rerna.Ispeci(ref K2);
+            Console.WriteLine("");
+
+            // Završetak
+            Console.WriteLine("");
+            Console.Write("Kolači su pečeni! Želite li 'Čokoladnoj ekstazi' dodati limun? D = da, N = ne: ");
+            string odabir = Console.ReadLine();
+            Console.WriteLine("");
+
+            if (odabir.ToUpper() == "D")
+            {
+                if (Rerna.peceno == true)
+                {
+                    Console.WriteLine("Ne možete dodati sastojak već pečenom kolaču!");
+                }
+                else
+                {
+                    K1.DodajSastojak("Limun", 100);
+                }
+            }
+            Console.WriteLine("Mmmmm! Ispekli ste " + Kolac.BrojInstanci.ToString() + " kolača! Uživajte!");
+        }
+    }
+}
