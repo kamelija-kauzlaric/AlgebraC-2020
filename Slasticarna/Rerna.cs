@@ -7,7 +7,7 @@ namespace Slasticarna
     {
         public static void Ispeci(ref Kolac kolac)
         {
-            Kolac.Pecenost = true;
+            kolac.Pecenost = true;
             brojIspecenihKolaca++;
         }
 
@@ -16,7 +16,5 @@ namespace Slasticarna
         {
             get { return brojIspecenihKolaca; }
         }
-
-
     }
 }
