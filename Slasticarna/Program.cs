@@ -22,7 +22,7 @@ namespace Slasticarna
             Console.WriteLine(K1);
             Console.WriteLine("");
 
-            Console.WriteLine("Dosad ste ispekli " + Rerna.BrojIspecenihKolaca.ToString() + " kolač! Ispecite i kolač po vlastitom izboru!");
+            Console.WriteLine("Dosad ste ispekli " + Rerna.BrojIspecenihKolaca.ToString() + " kolač! Ispecite kolač po vlastitom izboru!");
 
             // Korisnikov kolač - K2
             Console.WriteLine("");

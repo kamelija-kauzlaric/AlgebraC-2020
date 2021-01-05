@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace Slasticarna
+﻿namespace Slasticarna
 {
     static public class Rerna
     {

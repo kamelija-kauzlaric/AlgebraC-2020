@@ -43,7 +43,6 @@ namespace Slasticarna
             {
                 Console.WriteLine("Ne možete dodati sastojak već ispečenom kolaču!");
             }
-
         }
 
         public decimal MasaKolaca { get; internal set; }
