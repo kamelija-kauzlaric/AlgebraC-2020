@@ -138,25 +138,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_multicast_delegate", "08
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_dogadjaji_veci", "08_dogadjaji_veci\08_dogadjaji_veci.csproj", "{EEA6A88D-F1FF-4B68-9A9E-53E0E0D38A67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vozila.Konzola", "Vozila.Konzola\Vozila.Konzola.csproj", "{B69F7EA0-2CD2-4584-9EC9-2CDE68365C5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vozila.Konzola", "Vozila.Konzola\Vozila.Konzola.csproj", "{B69F7EA0-2CD2-4584-9EC9-2CDE68365C5D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vozila", "Vozila", "{28AEA3E1-6C29-4D29-B668-368F63B54A3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vozila.Model", "Vozila.Model\Vozila.Model.csproj", "{72143A8A-2CEA-422F-9B4B-C74E6AE9719D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vozila.Model", "Vozila.Model\Vozila.Model.csproj", "{72143A8A-2CEA-422F-9B4B-C74E6AE9719D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vozila.Win32", "Vozila.Win32\Vozila.Win32.csproj", "{7D5E6045-BB49-4275-9006-6B719367BD4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vozila.Win32", "Vozila.Win32\Vozila.Win32.csproj", "{7D5E6045-BB49-4275-9006-6B719367BD4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "alg-09-String", "alg-09-String", "{54203937-1624-4EF6-9A27-4531BBB1DDB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_string", "09_string\09_string.csproj", "{59E772E9-66C2-45E4-A40C-0C640E1E727A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_string", "09_string\09_string.csproj", "{59E772E9-66C2-45E4-A40C-0C640E1E727A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_osoba", "09_osoba\09_osoba.csproj", "{D78EFB19-D077-4687-BB4B-13463C2E6D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09_osoba", "09_osoba\09_osoba.csproj", "{D78EFB19-D077-4687-BB4B-13463C2E6D24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "alg-10-datoteke", "alg-10-datoteke", "{268F6A4C-0F49-4DBF-A23E-9BA845F8456B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_datoteka", "10_datoteka\10_datoteka.csproj", "{F3A9FC54-27DC-4F6B-901C-5DA81662263F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_datoteka", "10_datoteka\10_datoteka.csproj", "{F3A9FC54-27DC-4F6B-901C-5DA81662263F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Fileovi_datoteke", "10_Fileovi_datoteke\10_Fileovi_datoteke.csproj", "{F619AAC8-2A51-4C24-84C7-D224697D844A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Fileovi_datoteke", "10_Fileovi_datoteke\10_Fileovi_datoteke.csproj", "{F619AAC8-2A51-4C24-84C7-D224697D844A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ 9.1 Manipulacija tekstualnim podacima", "DZ 9.1 Manipulacija tekstualnim podacima\DZ 9.1 Manipulacija tekstualnim podacima.csproj", "{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -424,6 +426,10 @@ Global
 		{F619AAC8-2A51-4C24-84C7-D224697D844A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F619AAC8-2A51-4C24-84C7-D224697D844A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F619AAC8-2A51-4C24-84C7-D224697D844A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -504,6 +510,7 @@ Global
 		{268F6A4C-0F49-4DBF-A23E-9BA845F8456B} = {34A522ED-66E3-4540-A851-96AFDCD2B6FC}
 		{F3A9FC54-27DC-4F6B-901C-5DA81662263F} = {268F6A4C-0F49-4DBF-A23E-9BA845F8456B}
 		{F619AAC8-2A51-4C24-84C7-D224697D844A} = {268F6A4C-0F49-4DBF-A23E-9BA845F8456B}
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E} = {54203937-1624-4EF6-9A27-4531BBB1DDB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BB20FC2-F569-43F1-A2ED-1EDE6A62F22D}
