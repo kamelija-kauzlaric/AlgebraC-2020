@@ -160,15 +160,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_Fileovi_datoteke", "10_F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "alg-11-Linq", "alg-11-Linq", "{8B368C68-9B6A-4C29-9BF1-5E5E0C923212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cheatsheet", "cheatsheet\cheatsheet.csproj", "{65058D01-855A-4904-A1B7-6FF2E80F11DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cheatsheet", "cheatsheet\cheatsheet.csproj", "{65058D01-855A-4904-A1B7-6FF2E80F11DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_imena_a_linq", "11_imena_a_linq\11_imena_a_linq.csproj", "{0A439E68-33E4-42EA-921A-8BEC25BD5A25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_imena_a_linq", "11_imena_a_linq\11_imena_a_linq.csproj", "{0A439E68-33E4-42EA-921A-8BEC25BD5A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_direktor_linq", "11_direktor_linq\11_direktor_linq.csproj", "{344A5644-B9AC-469F-96F7-FA0B70A2932D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11_direktor_linq", "11_direktor_linq\11_direktor_linq.csproj", "{344A5644-B9AC-469F-96F7-FA0B70A2932D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQUpiti", "LINQUpiti\LINQUpiti.csproj", "{70C410B6-F16B-425C-AA44-7FE0D3168A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQUpiti", "LINQUpiti\LINQUpiti.csproj", "{70C410B6-F16B-425C-AA44-7FE0D3168A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DZ 9.1 Manipulacija tekstualnim podacima", "DZ 9.1 Manipulacija tekstualnim podacima\DZ 9.1 Manipulacija tekstualnim podacima.csproj", "{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DZ 9.1 Manipulacija tekstualnim podacima", "DZ 9.1 Manipulacija tekstualnim podacima\DZ 9.1 Manipulacija tekstualnim podacima.csproj", "{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -452,6 +452,10 @@ Global
 		{70C410B6-F16B-425C-AA44-7FE0D3168A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70C410B6-F16B-425C-AA44-7FE0D3168A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70C410B6-F16B-425C-AA44-7FE0D3168A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C5A4BC-D794-4D5B-8A59-E6711993BD2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
