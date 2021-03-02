@@ -28,26 +28,36 @@ namespace BazaPoklona.Controllers
         public async Task<IActionResult> OstvareniPromet()
         {
 
-// SELECT
-// max(Naziv) as NazivRobe,
-// VrstaRobe,
-// sum(Cijena) AS UkupnoLovePoVrstiRobe
-// FROM dbo.Poklon
-// GROUP BY VrstaRobe
-            
-//TODO Sredi Lambda expression
-            /*
-            var promet = await _context.Poklons
-                .GroupBy(x=>x.VrstaRobe)
-                //TODO podatke iz tablice vrstarobe ili Poklon???
-                .ToListAsync();
-            */
+            // SELECT
+            // max(Naziv) as NazivRobe,
+            // VrstaRobe,
+            // sum(Cijena) AS UkupnoLovePoVrstiRobe
+            // FROM dbo.Poklon
+            // GROUP BY VrstaRobe
 
+            //TODO Sredi Lambda expression
 
-//TODO Sredi raw SQL
+            //// PROF:
+            //var promet = await _context.Poklons
+            //    .GroupBy(x => x.VrstaRobe)
+            //TODO podatke iz tablice vrstarobe ili Poklon???
+
+            // todo podatke iz tablice vrstarobe ili poklon ???
+
             var promet = _context.Poklons
-    .FromSqlRaw("SELECT max(Naziv) as NazivRobe, VrstaRobe, sum(Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon GROUP BY VrstaRobe")
-    .ToList();
+                .GroupBy(x => x.VrstaRobe)
+                .Select(y => new
+                {
+                    VrstaRobe = y.Key,
+                    Cijena = y.Sum(x => x.Cijena)
+                })
+                .OrderByDescending(x => x.VrstaRobe)
+                .ToList();
+
+            //TODO Sredi raw SQL
+            //        var promet = _context.Poklons
+            //.FromSqlRaw("SELECT max(Naziv) as NazivRobe, VrstaRobe, sum(Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon GROUP BY VrstaRobe")
+            //.ToList();
             return View(promet);
         }
 
