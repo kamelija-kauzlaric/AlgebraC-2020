@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BazaPoklona.Models.VrstaRobe>
+﻿@model IEnumerable<BazaPoklona.Models.OstvareniPromet>
 
 @{
     ViewData["Title"] = "Index";
@@ -20,12 +20,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Naziv) <span class="badge badge-secondary">99</span>
+                    @Html.DisplayFor(modelItem => item.VrstaRobe)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    @Html.DisplayFor(modelItem => item.Cijena)
                 </td>
             </tr>
         }

@@ -37,13 +37,6 @@ namespace BazaPoklona.Controllers
 
             //TODO Sredi Lambda expression
 
-            //// PROF:
-            //var promet = await _context.Poklons
-            //    .GroupBy(x => x.VrstaRobe)
-            //TODO podatke iz tablice vrstarobe ili Poklon???
-
-            // todo podatke iz tablice vrstarobe ili poklon ???
-
             var promet = _context.Poklons
                 .GroupBy(x => x.VrstaRobe)
                 .Select(y => new
