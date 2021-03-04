@@ -9,7 +9,6 @@ namespace BazaPoklona.Models
     {
         public string Naziv { get; set; }
         public int VrstaRobe { get; set; }
-
-        public float Cijena { get; set; }
+        public double UkupnoLovePoVrstiRobe { get; set; }
     }
 }

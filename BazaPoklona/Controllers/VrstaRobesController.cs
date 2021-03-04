@@ -27,31 +27,33 @@ namespace BazaPoklona.Controllers
         // GET: VrstaRobes
         public async Task<IActionResult> OstvareniPromet()
         {
+            // Način 1: - NE RADI
+            //var promet = await _context.Poklons
+            //    .GroupBy(x => x.VrstaRobe)
+            //    .Select(y => new
+            //    {
+            //        Naziv = y.Max(x => x.Naziv),
+            //        VrstaRobe = y.Key,
+            //        Cijena = y.Sum(x => x.Cijena)
+            //    })
+            //    .OrderByDescending(x => x.VrstaRobe)
+            //    .ToListAsync();
+            //return View(promet);
 
-            // SELECT
-            // max(Naziv) as NazivRobe,
-            // VrstaRobe,
-            // sum(Cijena) AS UkupnoLovePoVrstiRobe
-            // FROM dbo.Poklon
-            // GROUP BY VrstaRobe
+            // Način 2:
 
-            //TODO Sredi Lambda expression
-
-            var promet = _context.Poklons
-                .GroupBy(x => x.VrstaRobe)
-                .Select(y => new
-                {
-                    VrstaRobe = y.Key,
-                    Cijena = y.Sum(x => x.Cijena)
-                })
-                .OrderByDescending(x => x.VrstaRobe)
-                .ToList();
-
-            //TODO Sredi raw SQL
-            //        var promet = _context.Poklons
-            //.FromSqlRaw("SELECT max(Naziv) as NazivRobe, VrstaRobe, sum(Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon GROUP BY VrstaRobe")
-            //.ToList();
+            var promet = await _context.Poklons
+                .FromSqlRaw("SELECT max(p.Naziv) as Naziv, p.VrstaRobe, sum(p.Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon p GROUP BY p.VrstaRobe")
+                .ToListAsync();
             return View(promet);
+
+
+            // DZ: Raw SQL Primjer:
+
+            //var promet = await _context.Poklons
+            //    .FromSqlRaw("SELECT max(Naziv) as Naziv, VrstaRobe, sum(Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon GROUP BY VrstaRobe")
+            //    .ToListAsync();
+            //return View(promet);
         }
 
         // GET: VrstaRobes/Details/5

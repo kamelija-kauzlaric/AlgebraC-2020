@@ -20,6 +20,7 @@ namespace BazaPoklona.Models
         public virtual DbSet<Poklon> Poklons { get; set; }
         public virtual DbSet<Trgovina> Trgovinas { get; set; }
         public virtual DbSet<VrstaRobe> VrstaRobes { get; set; }
+        public virtual DbSet<OstvareniPromet> OstvareniPromets { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -78,6 +79,17 @@ namespace BazaPoklona.Models
                     .IsRequired()
                     .HasMaxLength(40);
             });
+
+            modelBuilder.Entity<OstvareniPromet>(
+
+                eb =>
+                {
+                    eb.HasNoKey();
+                    eb.ToView("View_OstvareniPromet");
+                    eb.Property(v => v.Naziv).HasColumnName("Naziv");
+                    eb.Property(v => v.VrstaRobe).HasColumnName("Vrsta robe");
+                    eb.Property(v => v.UkupnoLovePoVrstiRobe).HasColumnName("Ukupno love po vrsti robe");
+                });
 
             OnModelCreatingPartial(modelBuilder);
         }
