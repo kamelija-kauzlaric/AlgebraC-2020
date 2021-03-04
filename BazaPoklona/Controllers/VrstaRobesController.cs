@@ -42,8 +42,8 @@ namespace BazaPoklona.Controllers
 
             // Način 2:
 
-            var promet = await _context.Poklons
-                .FromSqlRaw("SELECT max(p.Naziv) as Naziv, p.VrstaRobe, sum(p.Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon p GROUP BY p.VrstaRobe")
+            var promet = await _context.OstvareniPromets
+                .FromSqlRaw("SELECT max(p.Naziv) as Naziv, max(v.Naziv) as VrstaRobe, sum(p.Cijena) AS UkupnoLovePoVrstiRobe FROM dbo.Poklon p INNER JOIN dbo.VrstaRobe v ON p.VrstaRobe = v.Id GROUP BY p.VrstaRobe")
                 .ToListAsync();
             return View(promet);
 

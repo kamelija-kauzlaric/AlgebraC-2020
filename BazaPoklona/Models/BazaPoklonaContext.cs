@@ -87,8 +87,8 @@ namespace BazaPoklona.Models
                     eb.HasNoKey();
                     eb.ToView("View_OstvareniPromet");
                     eb.Property(v => v.Naziv).HasColumnName("Naziv");
-                    eb.Property(v => v.VrstaRobe).HasColumnName("Vrsta robe");
-                    eb.Property(v => v.UkupnoLovePoVrstiRobe).HasColumnName("Ukupno love po vrsti robe");
+                    eb.Property(v => v.VrstaRobe).HasColumnName("VrstaRobe");
+                    eb.Property(v => v.UkupnoLovePoVrstiRobe).HasColumnName("UkupnoLovePoVrstiRobe");
                 });
 
             OnModelCreatingPartial(modelBuilder);
