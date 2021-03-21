@@ -28,6 +28,7 @@ namespace BazaPoklona
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
 
@@ -36,6 +37,7 @@ namespace BazaPoklona
               .AddV8();
 
             services.AddControllersWithViews();
+
 
             services.AddDbContext<BazaPoklonaContext>(options =>  //Models.BazaPoklonaContex.cs
           options.UseSqlServer(Configuration.GetConnectionString("BazaPoklonaContext")));  //appsettings.json

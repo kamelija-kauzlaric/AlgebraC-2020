@@ -1,3 +1,14 @@
+#Polozili parcijalni ispit MVC CORE
+- Maja
+- Katarina
+- Jurica
+- Marko
+- Jasmin
+- Kamelija
+- Ivan Mijatovic (WCF 10.03.2021)
+- Josip
+- Dominik
+
 #Polozili SQL (24.02.2021)
 - Dominik Hrdas
 - Bruno Riđanec

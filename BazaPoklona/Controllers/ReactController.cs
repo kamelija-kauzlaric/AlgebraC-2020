@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BazaPoklona.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BazaPoklona.Models;
-using Microsoft.AspNetCore.Mvc;
 
-// TO DO: Pokušaj se spojiti na bazu i prikazati context preko reacta
+//TODO ZADACA1 pokusaj se spojiti na bazu i prikazati contex preko WCF
+//TODO ZADACA2 pokusaj se spojiti na bazu i prikazati contex preko reacta
 namespace BazaPoklona.Controllers
 {
     public class ReactController : Controller
@@ -19,8 +20,8 @@ namespace BazaPoklona.Controllers
                 new CommentModel
                 {
                     Id = 1,
-                    Author = "Marko Markić",
-                    Text = "Hello ReactJS.NET World!"
+                    Author = "Marko markic",
+                    Text = "olala laa"
                 },
                 new CommentModel
                 {
@@ -46,6 +47,7 @@ namespace BazaPoklona.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
     }

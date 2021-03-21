@@ -29,9 +29,6 @@ class Comment extends React.Component {
         );
     }
 }
-
-// NOVI - REPEATER (sa .map())
-
 class CommentList extends React.Component {
     render() {
         const commentNodes = this.props.data.map(comment => (
@@ -42,38 +39,34 @@ class CommentList extends React.Component {
         return <div className="commentList">{commentNodes}</div>;
     }
 }
+// stari commentList sa staticnim podacima
+/*
+class CommentList extends React.Component {
+    render() {
+        return (
+            <div className="commentList">
 
-// STARI:
+                <Comment author="Daniel Lo Nigro" age="99">
+                    Hello ReactJS.NET World!
+                </Comment>
 
-//class CommentList extends React.Component {
-//    render() {
-//        return (
-//            <div className="commentList">
+                <Comment author="Pete Hunt" age="78">This is one comment</Comment>
 
-
-
-//                <Comment author="Daniel Lo Nigro" age="99">
-//                    Hello ReactJS.NET World!
-//                </Comment>
-
-//                <Comment author="Pete Hunt" age="78"> This is one comment</Comment >
-
-//                <Comment author="Jordan Walke" age="44">
-//                    This is *another* comment.
-//                    - list
-//                    - list2
-//                    -neka jos lista
-//                    # h1
-//                    # h2
-//                    # h3
-//                    __boldano__
-//                </Comment >
-
-//            </div >
-//        );
-//    }
-//}
-
+                <Comment author="Jordan Walke">
+                    This is *another* comment
+                    -  list
+                    -  list2
+                    -  neka jos lista
+                    # h1
+                    ## h2
+                   __boldano__
+                </Comment>
+                
+            </div>
+        );
+    }
+}
+*/
 class CommentForm extends React.Component {
     render() {
         return (
@@ -82,13 +75,19 @@ class CommentForm extends React.Component {
     }
 }
 
-// KLASA - ime klase - koga naslijeđuje - metoda render
-// Dovoljno ubaciti klase kao tagove, a gore smo definirali što oni ispisuju.
-
 class CommentBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
+    }
+    componentWillMount() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('get', this.props.url, true);
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.responseText);
+            this.setState({ data: data });
+        };
+        xhr.send();
     }
     render() {
         return (
@@ -101,30 +100,25 @@ class CommentBox extends React.Component {
     }
 }
 
-//class CommentBox extends React.Component {
-//    render() {
-//        return (
-//            <div className="commentBox">
+/*
+class CommentBox extends React.Component {
+    render() {
+        return (
+            <div className="commentBox">
 
-//                <h1>Comments</h1>
-
-//                <CommentList data={this.props.data} />
-//                <CommentForm />
-//            </div>
-//        );
-//    }
-//}
-
-// NAREDBA - renderiraj mi (ispiši) ovaj CommentBox element prema klasi CommentBox
-// Postavi to na ovaj zadnji tag 'content' - id diva di će se ispisat (može tu i span, šta god...).
+                <h1>Komentari</h1>
+                <CommentList data={this.props.data} />
+                <CommentForm />
+                
+            </div>
+        );
+    }
+}
+*/
 
 ReactDOM.render(
     <CommentBox url="/comments" />,
     document.getElementById('content')
 );
-
-// STARO ali sa nekim parametrima
-// ReactDOM.render(<CommentBox data={data} />, document.getElementById('content'));
-
-// STARO sa hard-coded podacima:
-// ReactDOM.render(<CommentBox />, document.getElementById('content'));
+//ReactDOM.render(<CommentBox data={data} />, document.getElementById('content'));
+//ReactDOM.render(<CommentBox />, document.getElementById('content'));

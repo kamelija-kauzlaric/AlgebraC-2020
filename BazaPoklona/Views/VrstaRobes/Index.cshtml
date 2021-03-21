@@ -6,15 +6,11 @@
 
 <h1>Index</h1>
 
-<a asp-action="OstvareniPromet" asp-controller="VrstaRobes">Lista ostvarenog prometa</a> |
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
-@Html.CheckBox("oznaciME", true) Check
+@Html.CheckBox("oznaciMe",true) Checkk
 <input checked="checked" id="oznaciMe" name="oznaciMe" type="checkbox" value="true">
-
 <table class="table">
     <thead>
         <tr>
@@ -29,7 +25,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Naziv) <span class="badge badge-secondary">99</span>
+                    @Html.DisplayFor(modelItem => item.Naziv)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

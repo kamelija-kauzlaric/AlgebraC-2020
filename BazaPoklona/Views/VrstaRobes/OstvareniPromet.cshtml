@@ -1,7 +1,7 @@
-﻿@model IEnumerable<BazaPoklona.Models.OstvareniPromet>
+﻿@model IEnumerable<BazaPoklona.Models.Poklon>
 
 @{
-    ViewData["Title"] = "Ostvareni promet";
+    ViewData["Title"] = "Index";
 }
 
 <h1>OstvareniPromet</h1>
@@ -10,13 +10,13 @@
     <thead>
         <tr>
             <th>
-                Naziv robe
+                @Html.DisplayNameFor(model => model.Naziv)
             </th>
-            <th>
-                Vrsta robe
+            <th> 
+                @Html.DisplayNameFor(model => model.VrstaRobe) 
             </th>
-            <th>
-                Cijena
+            <th> 
+                @Html.DisplayNameFor(model => model.Cijena) 
             </th>
         </tr>
     </thead>
@@ -26,12 +26,13 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Naziv)
+
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.VrstaRobe)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UkupnoLovePoVrstiRobe)
+                    <span class="badge badge-secondary">@Html.DisplayFor(modelItem => item.Cijena)</span>
                 </td>
             </tr>
         }

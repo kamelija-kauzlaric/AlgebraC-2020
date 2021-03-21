@@ -6,17 +6,13 @@
     <title>Dobar dan React!</title>
 </head>
 <body>
-    <!-- Tu će ispisati ono iz Tutorial.jsx jer tu piše content. -->
-    <!-- React kreira sadržaj dinamički upisujući komponente direktno u document object model. -->
+
     <div id="content"></div>
 
-    <!-- React libraryji: -->
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
-
-    <!-- Skripta pod Home direktorijem, tj. našim wwwrootom -->
-    <!-- Sadržaj je ovdje - tekst dodan dinamički. -->
+    
     <script src="@Url.Content("~/js/Tutorial.jsx")"></script>
 
 </body>

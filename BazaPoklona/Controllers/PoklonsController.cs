@@ -6,18 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BazaPoklona.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace BazaPoklona.Controllers
 {
     public class PoklonsController : Controller
     {
         private readonly BazaPoklonaContext _context;
+        private IWebHostEnvironment hostingEnv;
 
-        public PoklonsController(BazaPoklonaContext context)
+        public PoklonsController(BazaPoklonaContext context, IWebHostEnvironment env)
         {
             _context = context;
+            this.hostingEnv = env;
         }
 
         // GET: Poklons
@@ -25,11 +30,11 @@ namespace BazaPoklona.Controllers
         {
             var bazaPoklonaContext = _context.Poklons
                 .Include(p => p.VrstaRobeNavigation);
-
+           
             var sviPokloni = _context.Poklons
                 .Include(p => p.VrstaRobeNavigation);
 
-            ViewData["sviPokloni"] = sviPokloni.ToList();
+            ViewData["sviPokloni"]= sviPokloni.ToList();
 
 
             return View(await bazaPoklonaContext.ToListAsync());
@@ -55,6 +60,29 @@ namespace BazaPoklona.Controllers
             }
             return View(pokloniList);
         }
+        public IActionResult WeatherJson()
+        {
+            Models.Root WJson = new Models.Root();
+            
+            string JSONResponse = System.IO.File.ReadAllText(Path.Combine(hostingEnv.WebRootPath, "weather.json"));
+            WJson = JsonConvert.DeserializeObject<Models.Root>(JSONResponse);
+
+            return View(WJson);
+        }
+
+        // GET: Poklons/Food
+        public async Task<IActionResult> Food()
+        {
+            var poklonListaHrana = _context.Poklons
+                .Where(x => x.VrstaRobeNavigation.Naziv == "Food")
+                 .Include(p => p.VrstaRobeNavigation);
+               //  .ToListAsync();
+            //  .FirstOrDefaultAsync(m => m.IdPoklon == id);
+            ViewData["poklonListaHrana"] = poklonListaHrana;
+
+            return View(await poklonListaHrana.ToListAsync());
+        }
+
 
         // GET: Poklons/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -134,12 +162,12 @@ namespace BazaPoklona.Controllers
 
             //Postavi svojstvo kupljen
             poklon.Kupljen = true;
-
+            
             // spremi izmjenjeni objekt u bazu
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");  // Kad preusmjerimo na akciju ona posalje popunjenu listu na view Index
-                                               // return View("Index");  // Ne mogu se vratiti na view bez Modela popunjenog Poklonima!!!!
+           // return View("Index");  // Ne mogu se vratiti na view bez Modela popunjenog Poklonima!!!!
         }
 
         // POST: Poklons/Edit/5
