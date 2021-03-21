@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BazaPoklona.Models;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace BazaPoklona.Controllers
 {
@@ -23,7 +25,35 @@ namespace BazaPoklona.Controllers
         {
             var bazaPoklonaContext = _context.Poklons
                 .Include(p => p.VrstaRobeNavigation);
+
+            var sviPokloni = _context.Poklons
+                .Include(p => p.VrstaRobeNavigation);
+
+            ViewData["sviPokloni"] = sviPokloni.ToList();
+
+
             return View(await bazaPoklonaContext.ToListAsync());
+        }
+
+        // GET: http://localhost:5000/Poklons/IndexJson
+        public IActionResult IndexJson()
+        {
+            return Json(_context.Poklons);
+        }
+
+        // consume from /Poklons/IndexJson
+        public async Task<IActionResult> ConsumeJson()
+        {
+            List<Poklon> pokloniList = new List<Poklon>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://localhost:5000/Poklons/IndexJson"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    pokloniList = JsonConvert.DeserializeObject<List<Poklon>>(apiResponse);
+                }
+            }
+            return View(pokloniList);
         }
 
         // GET: Poklons/Details/5
@@ -104,12 +134,12 @@ namespace BazaPoklona.Controllers
 
             //Postavi svojstvo kupljen
             poklon.Kupljen = true;
-            
+
             // spremi izmjenjeni objekt u bazu
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");  // Kad preusmjerimo na akciju ona posalje popunjenu listu na view Index
-           // return View("Index");  // Ne mogu se vratiti na view bez Modela popunjenog Poklonima!!!!
+                                               // return View("Index");  // Ne mogu se vratiti na view bez Modela popunjenog Poklonima!!!!
         }
 
         // POST: Poklons/Edit/5
