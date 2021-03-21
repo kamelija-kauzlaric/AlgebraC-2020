@@ -33,7 +33,9 @@ namespace MVCsAuth
                     Configuration.GetConnectionString("AuthConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            // NE ŽELIM POTVRDU MEJL ADRESE:
+            //            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
@@ -57,6 +59,7 @@ namespace MVCsAuth
 
             app.UseRouting();
 
+            // ZA ISKLJUÈITI AUTH, SAMO ZAKOMENTIRATI SLJEDEÆE 2 LINIJE:
             app.UseAuthentication();
             app.UseAuthorization();
 
